@@ -10,8 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Login App',
-      theme: ThemeData(primaryColor: Colors.green),
-      home: SignupScreen(),
+      theme: ThemeData(primaryColor: Colors.blue[900]),
+      home: LoginScreen(),
+      routes: {
+        SignupScreen.routeName: (ctx) => SignupScreen(),
+        LoginScreen.routeName: (ctx) => LoginScreen(),
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+      },
     );
   }
 }

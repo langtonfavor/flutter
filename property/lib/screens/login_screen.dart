@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:property/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
+  static const routeName = "/login";
   @override
   _LoginState createState() => _LoginState();
 }
@@ -15,6 +17,17 @@ class _LoginState extends State<LoginScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Login..'),
+          actions: <Widget>[
+            FlatButton(
+              child: Row(
+                children: <Widget>[Text('signup'), Icon(Icons.person_add)],
+              ),
+              onPressed: () {
+                Navigator.of(context)
+                    .pushReplacementNamed(SignupScreen.routeName);
+              },
+            )
+          ],
         ),
         body: Stack(
           children: <Widget>[
